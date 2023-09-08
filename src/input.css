@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.play-board {
+    display: grid;
+    background: #212837;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.food {
+    background: #FF003D;
+}
+.head {
+    background: #60CBFF;
+}

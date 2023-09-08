@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="./output.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <script src="./script.js" defer></script>
+</head>
+
+<body class="bg-green-700 grid place-content-center min-h-screen">
+    <div class="grid place-content-center">
+
+        <!-- Score Details -->
+        <div class="flex justify-between p-4 border rounded-t-md bg-slate-700 text-white border-slate-700">
+            <span id="score" class="score">Score: 0</span>
+            <span id="high-score" class="high-score">High Score: 0</span>
+        </div>
+
+        <!-- Play Section -->
+        <div id="play-section" class="h-[500px] border w-[400px] rounded-b-lg bg-green-600 play-board"> this is
+            playboard</div>
+
+        <!-- Control Key Section -->
+
+        <div id="controls"
+            class=" hidden grid-cols-4 place-content-center place-items-center  border h-16 rounded-b-md border-slate-700 bg-slate-700">
+            <p class="text-3xl ">&larr;</p>
+            <p class="text-3xl  ">&uarr;</p>
+            <p class="text-3xl ">&rarr;</p>
+            <p class="text-3xl ">&darr;</p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
