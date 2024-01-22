@@ -120,5 +120,5 @@ const initGame = () => {
 updateFoodPosition();
 setIntervalId = setInterval(initGame, 100);
 document.addEventListener("keyup", changeDirection);
-document.addEventListener("touchstart", handleTouchStart, { passive: true });
-document.addEventListener("touchmove", handleTouchMove, { passive: true });
+playBoard.addEventListener("touchstart", handleTouchStart);
+playBoard.addEventListener("touchmove", handleTouchMove);
