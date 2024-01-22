@@ -1,7 +1,6 @@
 const playBoard = document.querySelector("#play-section");
 const scoreElement = document.querySelector("#score");
 const highScoreElement = document.querySelector("#high-score");
-const controls = document.querySelectorAll("#controls p");
 
 let gameOver = false;
 let foodX, foodY;
@@ -10,7 +9,7 @@ let velocityX = 0, velocityY = 0;
 let snakeBody = [];
 let setIntervalId;
 let score = 0;
-
+let highScore = parseInt(localStorage.getItem("high-score")) || 0;
 let touchStartX = 0;
 let touchStartY = 0;
 
@@ -46,7 +45,6 @@ const handleSwipe = (startX, startY, endX, endY) => {
     const deltaY = endY - startY;
 
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        // Horizontal swipe
         if (deltaX > 0 && velocityX !== -1) {
             velocityX = 1;
             velocityY = 0;
@@ -55,7 +53,6 @@ const handleSwipe = (startX, startY, endX, endY) => {
             velocityY = 0;
         }
     } else {
-        // Vertical swipe
         if (deltaY > 0 && velocityY !== -1) {
             velocityX = 0;
             velocityY = 1;
@@ -65,8 +62,6 @@ const handleSwipe = (startX, startY, endX, endY) => {
         }
     }
 };
-
-controls.forEach((button) => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
 
 const handleTouchStart = (e) => {
     e.preventDefault();
@@ -92,17 +87,15 @@ const handleTouchMove = (e) => {
 const initGame = () => {
     if (gameOver) return handleGameOver();
     let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
-
+    highScoreElement.innerText = `High Score: ${highScore}`;
     if (snakeX === foodX && snakeY === foodY) {
         updateFoodPosition();
         snakeBody.push([foodY, foodX]);
         score++;
-        highScore = score >= highScore ? score : highScore;
+        highScore = Math.max(score, highScore);
         localStorage.setItem("high-score", highScore);
         scoreElement.innerText = `Score: ${score}`;
-        highScoreElement.innerText = `High Score: ${highScore}`;
     }
-
     snakeX += velocityX;
     snakeY += velocityY;
 

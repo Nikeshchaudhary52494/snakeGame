@@ -11,18 +11,19 @@
     <script src="./script.js" defer></script>
 </head>
 
-<body class="bg-green-700 grid place-content-center min-h-screen">
-    <div class="grid place-content-center px-2">
+<body>
+    <div class="bg-green-700 h-screen flex  justify-center items-center">
 
-        <!-- Score Details -->
-        <div class="flex justify-between p-4 border rounded-t-md bg-slate-700 text-white border-slate-700">
-            <span id="score" class="score">Score: 0</span>
-            <span id="high-score" class="high-score">High Score: 0</span>
+        <div class="w-full max-w-md px-2">
+            <!-- Score Details -->
+            <div class="bg-slate-700 py-5 text-slate-300 flex rounded-t-lg justify-between px-2 ">
+                <span id="score" class="score">Score: 0</span>
+                <span id="high-score" class="high-score">High Score: 0</span>
+            </div>
+
+            <!-- Play Section -->
+            <div id="play-section" class="h-[60vh] bg-slate-800 grid rounded-b-lg play-board"></div>
         </div>
-
-        <!-- Play Section -->
-        <div id="play-section" class="h-[500px] border w-[400px] rounded-b-lg play-board"> this is
-            playboard</div>
     </div>
 
 </body>

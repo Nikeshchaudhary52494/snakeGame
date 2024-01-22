@@ -4,13 +4,14 @@
 
 .play-board {
     display: grid;
-    background: #212837;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
 
 .food {
-    background: #FF003D;
+    background-color: red;
+    border-radius: 100%;
 }
+
 .head {
     background: #60CBFF;
 }
