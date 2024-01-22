@@ -69,11 +69,13 @@ const handleSwipe = (startX, startY, endX, endY) => {
 controls.forEach((button) => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
 
 const handleTouchStart = (e) => {
+    e.preventDefault();
     touchStartX = e.touches[0].clientX;
     touchStartY = e.touches[0].clientY;
 };
 
 const handleTouchMove = (e) => {
+    e.preventDefault();
     if (!touchStartX || !touchStartY) {
         return;
     }
